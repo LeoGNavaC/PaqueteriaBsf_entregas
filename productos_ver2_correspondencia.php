@@ -77,7 +77,7 @@
 					</tr>
 
 					<tr> 
-						<td><b>Fecha-entregahola mundo:</b></td>
+						<td><b>Fecha-entrega:</b></td>
 						<td><?php echo $proent;?></td>
 					</tr>
 
