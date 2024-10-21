@@ -20,7 +20,7 @@
 
             if (isset($_POST['btnbuscar'])) {//************************se realizo modificacion */
                 $buscar = $_POST['txtbuscar'];
-                $sqlusu = mysqli_query($conn, "SELECT pro.id,pro.numeroguia,pro.fecha,pro.nombresocio,pro.direccion,pro.orientacion,cat.nombre AS categoria FROM productos pro, categoria_productos cat WHERE pro.categoria_id=cat.id AND numeroguia LIKE '".$buscar."%'");
+                $sqlusu = mysqli_query($conn, "SELECT pro.id,pro.numeroguia,pro.fecha,pro.nombresocio,pro.direccion,pro.orientacion,cat.nombre AS categoria FROM productos pro INNER JOIN categoria_productos cat ON pro.categoria_id=cat.id WHERE pro.numeroguia LIKE '".$buscar."%' OR pro.direccion LIKE '%".$buscar."%'");
             } else {//******************se realizo modificacion */
                 $sqlusu = mysqli_query($conn, "SELECT pro.id,pro.numeroguia,pro.fecha,pro.nombresocio,pro.direccion,pro.orientacion,cat.nombre AS categoria FROM productos pro, categoria_productos cat WHERE pro.categoria_id=cat.id ORDER BY pro.id DESC LIMIT " . (($pagina - 1) * $filasmax)  . "," . $filasmax);
             }

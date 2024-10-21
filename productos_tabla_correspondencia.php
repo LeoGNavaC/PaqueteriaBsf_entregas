@@ -20,7 +20,7 @@
 
             if (isset($_POST['btnbuscar'])) {//************************se realizo modificacion */
                 $buscar = $_POST['txtbuscar'];
-                $sqlusu = mysqli_query($conn, "SELECT id,numeroguia,fecha,paque,nombresocio,direccion,orientacion FROM productos_correspondencia WHERE numeroguia LIKE '%".$buscar."%'");
+                $sqlusu = mysqli_query($conn, "SELECT id,numeroguia,fecha,paque,nombresocio,direccion,orientacion FROM productos_correspondencia WHERE numeroguia LIKE '%".$buscar."%' OR direccion LIKE '%".$buscar."%'");
             } else {//******************se realizo modificacion */
                 $sqlusu = mysqli_query($conn, "SELECT id,numeroguia,fecha,paque,nombresocio,direccion,orientacion FROM productos_correspondencia ORDER BY id DESC LIMIT " . (($pagina - 1) * $filasmax)  . "," . $filasmax);
             }
