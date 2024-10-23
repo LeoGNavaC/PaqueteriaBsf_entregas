@@ -81,7 +81,6 @@
         $proid1     = $_POST['id'];    
         $proest1    = $_POST['fue'];
         $proent1    = date("Y-m-d H:i:s");//*******************Se realizo una modificacion
-        $procorreoS = $_POST['email']; // correo del socio
         $prodes1    = $_POST['gia'];
         $procat1    = $_POST['paque'];
         $prorec1    = $_POST['receptor'];
