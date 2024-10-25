@@ -91,7 +91,7 @@
 								echo "<td style='width:25%'>
 									<a class='BotonesTeam1' href=\"productos_ver2_correspondencia.php?id=$mostrar[id]&pag=$pagina\">&#x1F50D;</a> 
 									<a class='BotonesTeam2' href=\"estatus_correspondencia.php?id=$mostrar[id]&pag=$pagina\">&#x2714;</a>
-									<a class='BotonesTeam3' href=\"estatus2_correspondencia.php?id=$mostrar[id]&pag=$pagina\">&#x2718;</a>
+									<!--<a class='BotonesTeam3' href=\"estatus2_correspondencia.php?id=$mostrar[id]&pag=$pagina\">&#x2718;</a>-->
 								</td>";  
 
 							}
