@@ -56,7 +56,7 @@
 							<th>Fecha/recepción</th>
 							<th>Paqueteria(empresa)</th>
 							<th>Dirección</th>
-							<th>Nombre del residenten</th>
+							<th>Nombre del residente</th>
 							<th>Orientacion</th>
 							<th>Comentarios</th>
 							<th>Estatus</th>
@@ -74,8 +74,8 @@
 								echo "<td>".$mostrar['fecha']."</td>";
 								//echo "<td>".$mostrar['paque']."</td>";//Muestra el numero de la empresa, nos referimos a categoria_id, y pasa porque esta heredando lo de la llave foreana
 								echo "<td>".$mostrar['paque']."</td>";
-								echo "<td>".$mostrar['direccion']."</td>";
 								echo "<td>".$mostrar['nombresocio']."</td>";
+								echo "<td>".$mostrar['direccion']."</td>";
 								echo "<td>".$mostrar['orientacion']."</td>";
 								//echo "<td style='width:30%'><img src='data:image/jpg;base64,".base64_encode($mostrar['foto']).";'></td>";// --- echo "<td>".$mostrar['foto']."</td>";
 								echo "<td>".$mostrar['comentarios']."</td>";
