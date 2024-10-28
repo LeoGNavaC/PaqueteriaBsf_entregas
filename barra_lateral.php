@@ -25,7 +25,7 @@
 				<li><a href="productos_tabla.php">• Datos Generales (paqueteria)</a></li>
 				<li><a href="datos_bsf.php">• Datos de Entrega (paqueteria)</a></li>
 				<li><a href="productos_tabla_correspondencia.php">• Datos Generales (correspondencia)</a></li>
-				<li><a href="datos_bsf_correspondencia.php">• Datos de Entrega (corresponcia)</a></s></li>
+				<li><a href="datos_bsf_correspondencia.php">• Datos de Entrega (corresponcia)</a></li>
 				<li><a href="cerrar_sesion.php" >• Cerrar sesión</a></li>
 			</ul>
 			<hr>

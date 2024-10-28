@@ -81,12 +81,9 @@
         $proid1     = $_POST['id'];    
         $proest1    = $_POST['fue'];
         $proent1    = date("Y-m-d H:i:s");//*******************Se realizo una modificacion
-        $prodes1    = $_POST['gia'];
-        $procat1    = $_POST['paque'];
-        $prorec1    = $_POST['receptor'];
 
         // Actualización en la base de datos
-        $querymodificar = mysqli_query($conn, "UPDATE productos_correspondencia SET numeroguia='$prodes', paque='$procat', estatus='$proest1', fecha_entrega='$proent1' WHERE id = '$proid1'");
+        $querymodificar = mysqli_query($conn, "UPDATE productos_correspondencia SET estatus='$proest1', fecha_entrega='$proent1' WHERE id = '$proid1'");
         echo "<script>window.location= 'datos_bsf_correspondencia.php?pag=$pagina' </script>";//************se realizo modificacion */
     }
 ?>
