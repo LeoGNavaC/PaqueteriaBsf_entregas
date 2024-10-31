@@ -22,7 +22,7 @@
 	
 				if(isset($_POST['btnbuscar'])){//*****************se realizo una modificacion */
 					$buscar = $_POST['txtbuscar'];
-					$sqlusu = mysqli_query($conn, "SELECT id,numeroguia,fecha,paque,nombresocio,direccion,orientacion,comentarios,estatus,fecha_entrega FROM productos_correspondencia WHERE numeroguia LIKE '%".$buscar."%' OR direccion LIKE '%".$buscar."%'");
+					$sqlusu = mysqli_query($conn, "SELECT id,numeroguia,fecha,paque,nombresocio,direccion,orientacion,comentarios,estatus,fecha_entrega FROM productos_correspondencia WHERE numeroguia LIKE '%".$buscar."%' OR direccion LIKE '%".$buscar."%' ORDER BY id DESC LIMIT " . (($pagina - 1) * $filasmax) ."," . $filasmax);
 				}
 				else{
 					$sqlusu = mysqli_query($conn, "SELECT id,numeroguia,fecha,paque,nombresocio,direccion,orientacion,comentarios,estatus,fecha_entrega FROM productos_correspondencia ORDER BY id DESC LIMIT " . (($pagina - 1) * $filasmax)  . "," . $filasmax);
@@ -42,7 +42,7 @@
 						<div style="float: left;">
 							<a href="datos_bsf.php" class="BotonesTeam">Inicio</a>
 							<input class="BotonesTeam" type="submit" value="Buscar" name="btnbuscar">
-							<input class="CajaTextoBuscar" type="text" name="txtbuscar"  placeholder="Ingresar datos de busqueda" autocomplete="off" >
+							<input class="CajaTextoBuscar" type="text" name="txtbuscar"  placeholder="Ingresar n° de guía o nombre del socio" autocomplete="off" >
 						</div>
 						<div style="float:right;">
 							
