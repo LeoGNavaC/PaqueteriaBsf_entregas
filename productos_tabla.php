@@ -33,8 +33,9 @@
                 <h2>Busqueda de Paquetes</h2>
                 <div class="ContBuscar">
                     <div style="float: left;">
+                        <a href="datos_bsf.php" class="BotonesTeam">Inicio</a>
                         <input class="BotonesTeam" type="submit" value="Buscar" name="btnbuscar">
-                        <input class="CajaTextoBuscar" type="text" name="txtbuscar" placeholder="Ingresar datos de busqueda" autocomplete="off">
+                        <input class="CajaTextoBuscar" type="text" name="txtbuscar" placeholder="Ingresar n° de guía o nombre del socio" autocomplete="off">
                     </div>
                     <div style="float:right;"></div>
                 </div>
