@@ -8,4 +8,3 @@
     mysqli_query($conn, "DELETE FROM categoria_productos WHERE id='$id'");
     header("Location:categoria_tabla.php?pag=$pagina");
 ?>
-

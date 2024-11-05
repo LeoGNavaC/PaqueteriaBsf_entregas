@@ -2,7 +2,7 @@
   $host 	= 'localhost';
   $nom 	= 'root';
   $pass 	= '';
-  $db 	= 'logincrud10';//hambiente de pruebas
+  $db 	= 'paqueteriabsf';
 
   $conn = mysqli_connect($host, $nom, $pass, $db);
 
@@ -10,5 +10,3 @@
     die("Error en la conexión: " . mysqli_connect_error());
   }	
 ?>
-
-

@@ -218,4 +218,3 @@
         $conn->query("UPDATE productos AS p JOIN residentes AS r ON p.id_residentes = r.idresidentes SET p.nombresocio = r.name");
     }
 ?>
-
