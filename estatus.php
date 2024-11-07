@@ -88,8 +88,8 @@
 
                     <tr>
                         <td colspan="2" >
+                            <?php echo "<a class='BotonesTeam' href=\"datos_bsf.php?pag=$pagina\">Cancelar</a>";?>&nbsp;
                             <input class='BotonesTeam' type="submit" name="btnregistrar" value="Aceptar">
-                            <?php echo "<a class='BotonesTeam' href=\"datos_bsf.php?pag=$pagina\">Cancelar</a>";?>&nbsp;<!--**********Se realizo modificacion****-->
                         </td>
                     </tr>
                 </table>

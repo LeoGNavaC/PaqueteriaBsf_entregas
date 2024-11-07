@@ -80,8 +80,8 @@
 					</tr>
 
 						<td colspan="2" >
-							<input class='BotonesTeam' type="submit" name="btnregistrar" value="Aceptar">
 							<?php echo "<a class='BotonesTeam' href=\"datos_bsf.php?pag=$pagina\">Cancelar</a>";?>&nbsp;<!--************Se realizo modificacion******-->
+							<input class='BotonesTeam' type="submit" name="btnregistrar" value="Aceptar">
 							
 <!--Crear la ventana para envíar el correo al residente-->
 							

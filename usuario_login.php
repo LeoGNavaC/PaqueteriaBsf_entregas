@@ -10,7 +10,7 @@
 
     if($nr == 1){
         $_SESSION['usuarioingresando']=$correo;
-        header("Location: productos_tabla.php");
+        header("Location: datos_bsf.php");
     } else if ($nr == 0) {
         echo "<script> alert('Usuario no existe');window.location= 'index.php' </script>";
     }
