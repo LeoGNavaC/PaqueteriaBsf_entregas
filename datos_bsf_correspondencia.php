@@ -64,7 +64,7 @@
 						<?php
 							while ($mostrar = mysqli_fetch_assoc($sqlusu)) {
 								echo "<tr>";
-									echo "<td style='width:50%'>
+									echo "<td'>
 										<a class='BotonesTeam1' href=\"productos_ver2_correspondencia.php?id=$mostrar[id]&pag=$pagina\">&#x1F50D;</a> 
 										<a class='BotonesTeam2' href=\"estatus_correspondencia.php?id=$mostrar[id]&pag=$pagina\">&#x2714;</a>
 									</td>";  
