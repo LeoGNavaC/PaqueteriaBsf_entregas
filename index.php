@@ -4,7 +4,7 @@
     include('conexion.php');
     if(isset($_SESSION['usuarioingresando']))
     {
-    header('location: productos_tabla.php');
+        header('location: datos_bsf.php');
     }
 ?>
 
@@ -45,7 +45,6 @@
                     <div>
                         <input type="submit" value="Iniciar sesión" class="BtnLogin" name="btningresar" >
                     </div>
-
                 </form>
 
                 <!-- formulario registrar -->
@@ -64,7 +63,6 @@
                     <div>
                         <input type="submit" value="Crea nueva cuenta" class="BtnRegistrar" name="btnregistrar">
                     </div>
-
                 </form>
             </div>
         </div>

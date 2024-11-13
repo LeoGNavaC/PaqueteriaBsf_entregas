@@ -218,7 +218,7 @@
   
   @media (max-width: 768px) {
     .BarraLateral {
-      width: 100%;
+      width: 110%;
       height: auto;
       position: relative;
     }
@@ -293,7 +293,8 @@
   .BotonesTeam2,
   .BotonesTeam3 {
     transition: transform 300ms;
-    width: 40%;
+    width: 100%;
+    margin: 10px;
   }
   
   .BotonesTeam1 {
@@ -345,7 +346,8 @@
   }
   
   .CajaTextoBuscar {
-    width: 300px;
+    width: 600px;
+    height: 60px;
     padding: 10px;
     font-size: 1em;
     border-radius: 5px;
