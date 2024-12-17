@@ -92,49 +92,63 @@
 					<div style='text-align:right'>
 						<br>
 					</div>
-				<div style="text-align:center">
+
+					<div style="text-align:center">
+
 					<?php
 						if (isset($_GET['pag'])) {
 						if ($_GET['pag'] > 1) {
 					?>
+
 					<a class="BotonesTeam4" href="datos_bsf_correspondencia.php?pag=<?php echo $_GET['pag'] - 1; ?>">Anterior</a>
+					
 					<?php
 						} 
 						else 
 						{
-						?>
+					?>
+
 					<a class="BotonesTeam4" href="#" style="pointer-events: none">Anterior</a>
+					
 					<?php
 						}
 					?>
 	
-				<?php
-					} 
-					else 
-					{
-				?>
-				<a class="BotonesTeam4" href="#" style="pointer-events: none">Anterior</a>
-				<?php
-					}
+					<?php
+						} 
+						else 
+						{
+					?>
+
+					<a class="BotonesTeam4" href="#" style="pointer-events: none">Anterior</a>
+					<?php
+						}
+						
+						if (isset($_GET['pag'])) {
+						if ((($pagina) * $filasmax) < $maxusutabla) {
+					?>
+
+					<a class="BotonesTeam4" href="datos_bsf_correspondencia.php?pag=<?php echo $_GET['pag'] + 1; ?>">Siguiente</a>
 					
-					if (isset($_GET['pag'])) {
-					if ((($pagina) * $filasmax) < $maxusutabla) {
-				?>
-				<a class="BotonesTeam4" href="datos_bsf_correspondencia.php?pag=<?php echo $_GET['pag'] + 1; ?>">Siguiente</a>
-				<?php
-					} else {
-				?>
-				<a class="BotonesTeam4" href="#" style="pointer-events: none">Siguiente</a>
-				<?php
-					}
-				?>
-				<?php
-					} else {
-				?>
-				<a class="BotonesTeam4" href="datos_bsf_correspondencia.php?pag=2">Siguiente</a>
-				<?php
-					}
-				?>
+					<?php
+						} else {
+					?>
+
+					<a class="BotonesTeam4" href="#" style="pointer-events: none">Siguiente</a>
+
+					<?php
+						}
+					?>
+
+					<?php
+						} else {
+					?>
+
+					<a class="BotonesTeam4" href="datos_bsf_correspondencia.php?pag=2">Siguiente</a>
+					
+					<?php
+						}
+					?>
 			</div>
 		</div>
 	</body>
