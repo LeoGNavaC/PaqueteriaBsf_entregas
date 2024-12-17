@@ -12,6 +12,25 @@
     $pagina = $_GET['pag'];
     $id = $_GET['id'];
 
+    $smt = $conn -> prepare("SELECT nom FROM usuarios WHERE correo = ?");
+    $smt->bind_param("s",$_SESSION['usuarioingresando']);
+    $smt->execute();
+    $resultado = $smt->get_result();
+
+    $repar_nombre = [];
+    
+    if($resultado->num_rows > 0){
+        while($r = $resultado->fetch_assoc()){
+            if(!in_array($r['nom'],$repar_nombre)){
+                $repar_nombre[] = $r['nom'];
+            }
+        }
+    } else {
+        echo "Error, reportelo con sistemas: Correo; clsoporte3@cgcsf.mx, Numero; 56 4161 0514";
+    }
+
+    $smt->close();        
+    
     $querybuscar = mysqli_query($conn, "SELECT p.id, p.nombresocio, p.numeroguia, p.paque, p.estatus, p.receptor, cp.nombre AS categoria FROM productos p, categoria_productos cp WHERE p.id = '$id' AND p.categoria_id = cp.id"); //*******se realizo modificacion */
     
     while($mostrar = mysqli_fetch_array($querybuscar)){    
@@ -25,7 +44,7 @@
 ?>
 
 <html>
-<meta charset='UTF-8'>
+    <meta charset='UTF-8'>
     <body>
         <div class="caja_popup4">
             <form class="contenedor_popup3" method="POST">
@@ -36,6 +55,14 @@
                         <td><b>Id: </b></td>
                         <td><input class="CajaTexto" type="number" name="id" value="<?php echo $proid;?>" readonly></td>
                     </tr>
+
+                    <select name="repartidor" class="CajaTexto" style="display:none">
+                        <?php
+                            foreach($repar_nombre as $nombreR){
+                                echo '<option>' . htmlspecialchars($nombreR) . '</option>';
+                            }
+                        ?>
+                    </select>
 
                     <tr> 
                         <td><b>N°Guía: </b></td>
@@ -101,6 +128,7 @@
         $prodes1    = mysqli_real_escape_string($conn, $_POST['gia']);
         $procat1    = $_POST['paque'];
         $prorec1    = $_POST['receptor'];
+        $prorep1    = $_POST['repartidor'];
         
         // Cuerpo del correo
         $procuerpoCorreo  = "<p style='background-color: #2424ec; color: #333; font-family: Georgia, serif; font-size: 18px; line-height: 1.6; padding: 10px; border-left: 30px solid #6fb119; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 8px; margin: 20px 0;'><strong style='color: #b45508;'><em><u>Para:</u></em></strong> $procorreoS</p>";
@@ -139,7 +167,7 @@
         }
 
         // Actualización en la base de datos
-        $querymodificar = mysqli_query($conn, "UPDATE productos SET numeroguia='$prodes1', paque='$procat', estatus='$proest1', fecha_entrega='$proent1', receptor='$prorec1' WHERE id = '$proid1'");
+        $querymodificar = mysqli_query($conn, "UPDATE productos SET repartidorEn='$prorep1',numeroguia='$prodes1', paque='$procat', estatus='$proest1', fecha_entrega='$proent1', receptor='$prorec1' WHERE id = '$proid1'");
         echo "<script>window.location= 'datos_bsf.php?pag=$pagina' </script>";//************se realizo modificacion */
     }
 ?>
