@@ -12,7 +12,7 @@
 		<div class="ContenedorPrincipal">	
 			<?php
 	
-				$filasmax = 10;//Este me ayuda a mostrar una cantidad de datos en la tabla, en este caso muestra hasta 10 *********** se realizo modificacion
+				$filasmax = 10;//Muestra 10 registros
 	
 				if (isset($_GET['pag'])){
 					$pagina = $_GET['pag'];
@@ -22,7 +22,7 @@
 	
 				if(isset($_POST['btnbuscar'])){
 					$buscar = $_POST['txtbuscar'];
-					$sqlusu = mysqli_query($conn, "SELECT id,numeroguia,fecha,paque,nombresocio,direccion,orientacion,comentarios,estatus,fecha_entrega FROM productos_correspondencia WHERE numeroguia LIKE '%".$buscar."%' OR direccion LIKE '%".$buscar."%' ORDER BY id DESC LIMIT " . (($pagina - 1) * $filasmax) ."," . $filasmax);
+					$sqlusu = mysqli_query($conn, "SELECT id,numeroguia,paque,nombresocio,direccion,comentarios,estatus,fecha_entrega FROM productos_correspondencia WHERE numeroguia LIKE '%".$buscar."%' OR direccion LIKE '%".$buscar."%' ORDER BY id DESC LIMIT " . (($pagina - 1) * $filasmax) ."," . $filasmax);
 				}
 				else{
 					$sqlusu = mysqli_query($conn, "SELECT id,numeroguia,paque,nombresocio,direccion,comentarios,estatus,fecha_entrega FROM productos_correspondencia ORDER BY id DESC LIMIT " . (($pagina - 1) * $filasmax)  . "," . $filasmax);
@@ -69,33 +69,29 @@
 										<a class='BotonesTeam2' href=\"estatus_correspondencia.php?id=$mostrar[id]&pag=$pagina\">&#x2714;</a>
 									</td>";  
 									echo "<td>".$mostrar['numeroguia']."</td>";
-									//echo "<td>".$mostrar['paque']."</td>";//Muestra el numero de la empresa, nos referimos a categoria_id, y pasa porque esta heredando lo de la llave foreana
 									echo "<td>".$mostrar['paque']."</td>";
 									echo "<td>".$mostrar['nombresocio']."</td>";
 									echo "<td>".$mostrar['direccion']."</td>";
-									//echo "<td style='width:30%'><img src='data:image/jpg;base64,".base64_encode($mostrar['foto']).";'></td>";// --- echo "<td>".$mostrar['foto']."</td>";
 									echo "<td>".$mostrar['comentarios']."</td>";
 									if ($mostrar["estatus"] == "Entregado") {
-										//echo "Holaaaaaa!!!!!!";
 										echo "<td style='width:50%'><font color='green'><b>".$mostrar['estatus']."</font></td>";
 									} else {
-										//echo "Holiiiiii!!!!!!";
 										echo "<td style='width:50%'><font color='red'><b>".$mostrar['estatus']."</font></td>";
 									}
-									//echo "<td style='width:50%'>".$mostrar['estatus']."</td>";
 									echo "<td>".$mostrar['fecha_entrega']."</td>";
 								echo "</tr>";
 							}
 						?>
 					</table>
+
 					<div class="contador" style='text-align:right'>
 						<br>
 						<?php echo "Total de registros: ".$maxusutabla;?>
 					</div>
-				</div>
-				<div style='text-align:right'>
-					<br>
-				</div>
+
+					<div style='text-align:right'>
+						<br>
+					</div>
 				<div style="text-align:center">
 					<?php
 						if (isset($_GET['pag'])) {
