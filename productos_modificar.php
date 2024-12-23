@@ -336,7 +336,7 @@
 			//echo "<script>alert('holaaaaaa mundoooooo esto es para actualizar imagen');</script>";
 			//$querymodificar = mysqli_query($conn, "UPDATE productos SET nombre='$pronom1',numeroguia='$prodes1',fecha='$propre1',paque='$propaquete1',nombresocio='$pronomso1',direccion='$prodir1',orientacion='$proori1',foto_nombre='$profotN1',foto='$data',comentarios='$procom',categoria_id='$procat1' WHERE id = '$proid1'");
 			$stmt = $conn->prepare("UPDATE productos SET nombre=?,numeroguia=?,fecha=,paque=,nombresocio=,direccion=,orientacion=,foto_nombre=,foto=,comentarios=,categoria_id= WHERE id=?");
-    	$stmt->bind_param("sssiisssssi", $pronom1, $prodes1, $propre1, $propaquete1, $pronomso1, $prodir1, $proori1, $profotN1, $data, $procom, $procat1, $proid1);
+    		$stmt->bind_param("sssiisssssi", $pronom1, $prodes1, $propre1, $propaquete1, $pronomso1, $prodir1, $proori1, $profotN1, $data, $procom, $procat1, $proid1);
 
 			
 			echo "<script>window.location= 'productos_tabla.php?pag=$pagina' </script>";
