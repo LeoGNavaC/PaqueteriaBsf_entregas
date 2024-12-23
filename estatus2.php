@@ -57,7 +57,7 @@
 							<td><input class="CajaTexto" type="number" name="id" value="<?php echo $proid;?>" readonly></td>
 						</tr>
 
-						<select name="repartidor" class="CajaTexto" style="display:block">
+						<select name="repartidor" class="CajaTexto" style="display:none">
 							<?php
 								foreach($repar_nombre as $nombreR){
 									echo '<option>' . htmlspecialchars($nombreR) . '</option>';
